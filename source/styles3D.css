@@ -1,0 +1,38 @@
+
+	html, body {
+		top: 0;
+		height: 100%;
+		text-align: center;
+		margin: 0;
+	}
+	
+	.title {
+	font-size: 5vmax;	
+	font-family: 'Karla';
+	position: absolute;
+	color: #ffffff;
+	width: 50vw;
+	height: 6vmax;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+	top: 0;
+	left: 25vw;
+	}
+
+.cursorText {
+	/*font-family: 'Julius Sans One';*/
+	font-family: 'Karla';
+	/*font-family: 'Saira';*/
+	font-size: 3vmax;	
+	position: absolute;
+	display: block;
+	color: #ffffff;
+	width: auto;
+	height: 6vmax;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
