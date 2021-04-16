@@ -1,9 +1,30 @@
 let cards = document.querySelectorAll(".carta");  
-let isShuffling = true;
+let isShuffling = false;
 
 let start = Date.now(); // remember start time
 
+marqueeInit({
+	uniqueid: 'mycrawler',
+	style: {
+    'color': 'darkblue',
+    'font-family': 'Arial, Helvetica, sans-serif',
+    'font-size': '15vh',
+    'line-height': '17vh'
+	},
+	inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+	mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+	moveatleast: 2,
+	neutral: 150,
+	persist: true,
+	savedirection: true
+});
+
 const totalTime = 1500;
+
+startAnimation();
+
+
+
 
 
 let timer = setInterval(function() {
@@ -28,9 +49,9 @@ function draw(timePassed) {
   if(isShuffling)
   {
     var i = parseInt(Math.random()*cards.length, 10);
-    //console.log("Var i=" + i)
-    //console.log("TimePassed=" + timePassed)
-    //console.log("totalTime=" + totalTime)
+    // GET request to 
+    getRequest()
+    
   
     if(timePassed < totalTime/2)
     {
@@ -64,3 +85,23 @@ function toggleShuffle()
   console.log("TOGGLE SHUFFLE")
 }
 
+function getRequest()
+{
+  var myHeaders = new Headers();
+  myHeaders.append("Cookie", "GPS=1; YSC=M66LAlHPbvc; VISITOR_INFO1_LIVE=quoNIzV88Ps");
+  
+  var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+  };
+  
+  fetch("https://www.youtube.com/results?search_query=bolsonaro", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+}
+
+function startAnimation() {
+  
+}
