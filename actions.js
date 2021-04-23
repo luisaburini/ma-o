@@ -3,29 +3,9 @@ let isShuffling = false;
 
 let start = Date.now(); // remember start time
 
-marqueeInit({
-	uniqueid: 'mycrawler',
-	style: {
-    'color': 'darkblue',
-    'font-family': 'Arial, Helvetica, sans-serif',
-    'font-size': '15vh',
-    'line-height': '17vh'
-	},
-	inc: 5, //speed - pixel increment for each iteration of this marquee's movement
-	mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
-	moveatleast: 2,
-	neutral: 150,
-	persist: true,
-	savedirection: true
-});
-
 const totalTime = 1500;
 
 startAnimation();
-
-
-
-
 
 let timer = setInterval(function() {
   // how much time passed from the start?
@@ -39,12 +19,10 @@ let timer = setInterval(function() {
 
   // draw the animation at the moment timePassed
   draw(timePassed);
- 
-
 }, -1);
 
-// as timePassed goes from 0 to 2000
-// left gets values from 0px to 400px
+// as timePassed goes from
+// left gets values from  to 
 function draw(timePassed) {
   if(isShuffling)
   {
@@ -55,8 +33,8 @@ function draw(timePassed) {
   
     if(timePassed < totalTime/2)
     {
-      cards[i].style.left = timePassed / 12 + parseInt(Math.random(), 10) + 'px';
-      cards[i].style.top = timePassed / 12 + parseInt(Math.random(), 10)+ 'px';
+      cards[i].style.left = timePassed % 12 + parseInt(Math.random(), 10) + 'px';
+      cards[i].style.top = timePassed % 12 + parseInt(Math.random(), 10)+ 'px';
     }
     else
     {
